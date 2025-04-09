@@ -16,7 +16,7 @@
       "iconUrl": "",
       "resource": {
         "js": "progress-bar-scorecard.js",
-        "config": "progress-bar-scorecard.json"
+        "config": "config.json"
       }
     }
   ]
