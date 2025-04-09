@@ -1,3 +1,4 @@
+// Add CSS to document head
 const style = document.createElement('style');
 style.textContent = `
   body {
@@ -18,11 +19,11 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-const dscc = require('@google/dscc');
-const viz = require('@google/dscc-scripts/viz/initialViz.js');
-const local = require('./localMessage.js');
 
-// create and add the canvas element
+// Define the DSCC_IS_LOCAL constant
+const DSCC_IS_LOCAL = false;
+
+// Create and add the container element
 const container = document.createElement('div');
 container.id = 'container';
 document.body.appendChild(container);
@@ -131,27 +132,6 @@ function drawViz(data) {
       }
     });
   });
-}
-
-// renders locally
-if (DSCC_IS_LOCAL) {
-  viz.renderViz(local.message);
-} else {
-  dscc.subscribeToData(drawViz, {transform: dscc.tableTransform});
-}
-// Include all required code from index.js
-
-// Define the DSCC_IS_LOCAL constant
-const DSCC_IS_LOCAL = false;
-
-// Define container
-const container = document.createElement('div');
-container.id = 'container';
-document.body.appendChild(container);
-
-// Include your drawViz function
-function drawViz(data) {
-  // Copy your entire drawViz function here
 }
 
 // Subscribe to data
