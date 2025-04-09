@@ -1,22 +1,14 @@
 {
-  "name": "Progress Bar Scorecard",
-  "organization": "Your Organization",
-  "description": "A scorecard visualization that displays progress bars",
-  "logoUrl": "",
-  "packageUrl": "https://oviedov.github.io/looker-studio-viz/viz",
-  "supportUrl": "",
-  "privacyPolicyUrl": "",
-  "termsOfServiceUrl": "",
+  "name": "Progress Bar Visualization",
+  "description": "Displays progress bars with labels and values",
   "version": "1.0.0",
   "components": [
     {
       "id": "progressBar",
       "name": "Progress Bar",
-      "description": "Progress Bar visualization",
-      "iconUrl": "",
       "resource": {
-        "js": "progress-bar-scorecard.js",
-        "config": "config.json"
+        "js": "gs://looker-studio-viz/myViz.progress-bar-scorecard.js",
+        "config": "gs://looker-studio-viz/progress-bar-scorecard.json"
       }
     }
   ]
