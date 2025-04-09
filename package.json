@@ -1,0 +1,22 @@
+{
+  "name": "progress-bar-scorecard",
+  "version": "1.0.0",
+  "description": "A progress bar scorecard visualization for Looker Studio",
+  "main": "index.js",
+  "scripts": {
+    "build": "dscc-scripts build",
+    "start": "dscc-scripts start",
+    "update_message": "dscc-scripts update_message"
+  },
+  "devDependencies": {
+    "@google/dscc-scripts": "^1.0.0"
+  },
+  "dsccViz": {
+    "gcsDevBucket": "gs://your-gs-bucket-name",
+    "gcsProdBucket": "gs://your-gs-bucket-name-prod",
+    "jsFile": "index.js",
+    "jsonFile": "config.json",
+    "cssFile": "index.css",
+    "print": "print.js"
+  }
+}
