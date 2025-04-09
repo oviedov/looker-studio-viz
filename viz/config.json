@@ -1,121 +1,100 @@
 {
-  "data": [{
-    "id": "progress",
-    "label": "Progress Data",
-    "elements": [
-      {
-        "id": "labels",
-        "label": "Label Dimension",
-        "type": "DIMENSION",
-        "options": {
-          "min": 1,
-          "max": 1,
-          "supportedTypes": ["DEFAULT"]
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "elements": [
+        {
+          "id": "progress_labels",
+          "label": "Label Dimension",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "progress_values",
+          "label": "Progress Value",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
         }
-      },
-      {
-        "id": "values",
-        "label": "Value Metrics",
-        "type": "METRIC",
-        "options": {
-          "min": 1,
-          "max": 10
-        }
-      },
-      {
-        "id": "maxResults",
-        "label": "Max Results",
-        "type": "MAX_RESULTS",
-        "options": {
-          "max": 25
-        }
-      }
-    ]
-  }],
+      ]
+    }
+  ],
   "style": [
     {
       "id": "appearance",
-      "label": "Appearance",
+      "label": "Bar Appearance",
       "elements": [
         {
           "id": "barColor",
-          "label": "Progress Bar Color",
-          "defaultValue": {
-            "color": "#4285F4"
-          },
-          "type": "FILL_COLOR"
+          "label": "Bar Color",
+          "type": "FILL_COLOR",
+          "defaultValue": "#4285F4"
         },
         {
           "id": "barHeight",
-          "label": "Bar Height (px)",
-          "defaultValue": 24,
-          "type": "INTERVAL",
-          "options": {
-            "min": 10,
-            "max": 50
-          }
+          "label": "Bar Height",
+          "type": "FONT_SIZE",
+          "defaultValue": 24
         },
         {
           "id": "barSpacing",
-          "label": "Spacing Between Bars (px)",
-          "defaultValue": 16,
-          "type": "INTERVAL",
-          "options": {
-            "min": 5,
-            "max": 50
-          }
+          "label": "Bar Spacing",
+          "type": "FONT_SIZE",
+          "defaultValue": 16
         },
         {
           "id": "borderRadius",
-          "label": "Bar Corner Radius",
-          "defaultValue": 4,
-          "type": "BORDER_RADIUS"
+          "label": "Border Radius",
+          "type": "FONT_SIZE",
+          "defaultValue": 4
         },
         {
           "id": "showValues",
-          "label": "Show Percentage Values",
-          "defaultValue": true,
-          "type": "CHECKBOX"
+          "label": "Show Values",
+          "type": "CHECKBOX",
+          "defaultValue": true
         }
       ]
     },
     {
       "id": "text",
-      "label": "Text Format",
+      "label": "Text Formatting",
       "elements": [
         {
           "id": "labelFontSize",
           "label": "Label Font Size",
-          "defaultValue": 14,
-          "type": "FONT_SIZE"
+          "type": "FONT_SIZE",
+          "defaultValue": 14
         },
         {
           "id": "valueFontSize",
           "label": "Value Font Size",
-          "defaultValue": 14,
-          "type": "FONT_SIZE"
+          "type": "FONT_SIZE",
+          "defaultValue": 14
         },
         {
           "id": "labelFontColor",
-          "label": "Label Font Color",
-          "defaultValue": {
-            "color": "#000000"
-          },
-          "type": "FONT_COLOR"
+          "label": "Label Color",
+          "type": "FILL_COLOR",
+          "defaultValue": "#000000"
         },
         {
           "id": "valueFontColor",
-          "label": "Value Font Color",
-          "defaultValue": {
-            "color": "#000000"
-          },
-          "type": "FONT_COLOR"
+          "label": "Value Color",
+          "type": "FILL_COLOR",
+          "defaultValue": "#000000"
         },
         {
           "id": "fontFamily",
           "label": "Font Family",
-          "defaultValue": "Roboto",
-          "type": "FONT_FAMILY"
+          "type": "FONT_FAMILY",
+          "defaultValue": "Roboto"
         }
       ]
     }
@@ -123,7 +102,14 @@
   "interactions": [
     {
       "id": "interactions",
-      "supportedActions": ["FILTER"]
+      "label": "Interactions",
+      "elements": [
+        {
+          "id": "interactions",
+          "label": "Interactions",
+          "type": "INTERACTION"
+        }
+      ]
     }
   ]
 }
