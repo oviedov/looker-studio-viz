@@ -4,7 +4,7 @@
   "description": "A progress bar scorecard visualization for Looker Studio",
   "main": "index.js",
   "scripts": {
-    "build": "dscc-scripts build",
+    "build": "dscc-scripts viz build",
     "start": "dscc-scripts start",
     "update_message": "dscc-scripts update_message"
   },
