@@ -12,11 +12,11 @@
     "@google/dscc-scripts": "^1.0.0"
   },
   "dsccViz": {
-    "gcsDevBucket": "https://oviedov.github.io/looker-studio-viz",
-    "gcsProdBucket": "https://oviedov.github.io/looker-studio-viz",
+    "gcsDevBucket": "gs://looker-studio-viz",
+    "gcsProdBucket": "gs://looker-studio-viz",
     "jsFile": "index.js",
-    "jsonFile": "config.json",
+    "jsonFile": "index.json",
     "cssFile": "index.css",
-    "print": "print.js"
+    "print": "printMessage.js"
   }
 }
