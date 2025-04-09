@@ -1,0 +1,26 @@
+{
+  "name": "Progress Bar Scorecard",
+  "description": "A scorecard visualization that displays multiple metrics as progress bars",
+  "author": "Your Name",
+  "organization": "Your Organization",
+  "logoUrl": "",
+  "organizationUrl": "",
+  "supportUrl": "",
+  "privacyPolicyUrl": "",
+  "termsOfServiceUrl": "",
+  "packageUrl": "",
+  "version": "1.0.0",
+  "components": [
+    {
+      "id": "progressBarScorecard",
+      "name": "Progress Bar Scorecard",
+      "description": "Displays multiple metrics as progress bars with labels and percentages",
+      "iconUrl": "",
+      "resource": {
+        "js": "index.js",
+        "config": "config.json",
+        "css": "css.css"
+      }
+    }
+  ]
+}
