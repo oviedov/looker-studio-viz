@@ -13,7 +13,7 @@
   },
   "dsccViz": {
     "gcsDevBucket": "https://oviedov.github.io/looker-studio-viz",
-    "gcsProdBucket": "https://oviedov.github.io/looker-studio-viz",,
+    "gcsProdBucket": "https://oviedov.github.io/looker-studio-viz",
     "jsFile": "index.js",
     "jsonFile": "config.json",
     "cssFile": "index.css",
