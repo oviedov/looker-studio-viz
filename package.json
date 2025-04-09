@@ -12,8 +12,8 @@
     "@google/dscc-scripts": "^1.0.0"
   },
   "dsccViz": {
-    "gcsDevBucket": "gs://your-gs-bucket-name",
-    "gcsProdBucket": "gs://your-gs-bucket-name-prod",
+    "gcsDevBucket": "https://oviedov.github.io/looker-studio-viz",
+    "gcsProdBucket": "https://oviedov.github.io/looker-studio-viz",,
     "jsFile": "index.js",
     "jsonFile": "config.json",
     "cssFile": "index.css",
