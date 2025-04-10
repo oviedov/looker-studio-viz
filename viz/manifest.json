@@ -1,0 +1,25 @@
+{
+  "name": "Progress Bar Visualization",
+  "organization": "Your Organization Name",
+  "description": "Displays progress bars with labels and values",
+  "logoUrl": "https://github.com/oviedov/looker-studio-viz/logo.png",
+  "organizationUrl": "https://yourwebsite.com",
+  "supportUrl": "https://github.com/oviedov/looker-studio-viz/issues",
+  "privacyPolicyUrl": "https://yourwebsite.com/privacy",
+  "termsOfServiceUrl": "https://yourwebsite.com/terms",
+  "packageUrl": "https://github.com/oviedov/looker-studio-viz",
+  "devMode": false,
+  "components": [
+    {
+      "id": "progressBar",
+      "name": "Progress Bar",
+      "description": "Displays progress bars with labels and percentage values",
+      "iconUrl": "https://github.com/oviedov/looker-studio-viz/icon.png",
+      "resource": {
+        "js": "https://github.com/oviedov/looker-studio-viz/index.js",
+        "config": "https://github.com/oviedov/looker-studio-viz/index.json",
+        "css": "https://github.com/oviedov/looker-studio-viz/index.css"
+      }
+    }
+  ]
+}
