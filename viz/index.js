@@ -1,18 +1,28 @@
+const d3 = Object.assign({}, require('d3'));
 const dscc = require('@google/dscc');
-const viz = require('@google/dscc-scripts/viz/initialViz.js');
 const local = require('./localMessage.js');
 
-// create and add the canvas element
-const container = document.createElement('div');
-container.id = 'container';
-document.body.appendChild(container);
+// change this to 'true' for local development
+// change this to 'false' before deploying
+export const LOCAL = false;
 
-function drawViz(data) {
-  // Remove any existing elements
-  container.innerHTML = '';
+// write viz code here
+const drawViz = data => {
+  // Clear any existing elements
+  document.body.innerHTML = '';
+  
+  // Create container
+  const container = document.createElement('div');
+  container.id = 'container';
+  container.style.width = '100%';
+  container.style.height = '100%';
+  container.style.overflow = 'auto';
+  document.body.appendChild(container);
   
   // Get style values
-  const barColor = data.style.appearance.barColor.value.color || '#4285F4';
+  const barColor = data.style.appearance.barColor.value 
+    ? data.style.appearance.barColor.value.color 
+    : '#4285F4';
   const barHeight = data.style.appearance.barHeight.value || 24;
   const barSpacing = data.style.appearance.barSpacing.value || 16;
   const borderRadius = data.style.appearance.borderRadius.value || 4;
@@ -21,16 +31,20 @@ function drawViz(data) {
   // Text formatting
   const labelFontSize = data.style.text.labelFontSize.value || 14;
   const valueFontSize = data.style.text.valueFontSize.value || 14;
-  const labelFontColor = data.style.text.labelFontColor.value.color || '#000000';
-  const valueFontColor = data.style.text.valueFontColor.value.color || '#000000';
+  const labelFontColor = data.style.text.labelFontColor.value 
+    ? data.style.text.labelFontColor.value.color 
+    : '#000000';
+  const valueFontColor = data.style.text.valueFontColor.value 
+    ? data.style.text.valueFontColor.value.color 
+    : '#000000';
   const fontFamily = data.style.text.fontFamily.value || 'Roboto';
   
   // Set container styles
   container.style.fontFamily = fontFamily;
   container.style.padding = '10px';
   
-  // Calculate total width for the visualization (used for responsive scaling)
-  const width = document.body.clientWidth;
+  // Calculate total width for the visualization
+  const width = dscc.getWidth();
   const labelWidth = width * 0.2; // 20% for labels
   const valueWidth = width * 0.1; // 10% for values
   const barWidth = width * 0.7; // 70% for bars
@@ -103,7 +117,10 @@ function drawViz(data) {
     // Add click event listener for filtering
     rowElement.style.cursor = 'pointer';
     rowElement.addEventListener('click', () => {
-      if (data.interactions.interactions.value.supportedActions.indexOf('FILTER') >= 0) {
+      if (data.interactions && data.interactions.interactions && 
+          data.interactions.interactions.value && 
+          data.interactions.interactions.value.supportedActions && 
+          data.interactions.interactions.value.supportedActions.indexOf('FILTER') >= 0) {
         dscc.sendInteraction('interactions', 'FILTER', {
           concepts: ['progress_labels'],
           values: [[row['progress_labels'][0]]]
@@ -111,11 +128,11 @@ function drawViz(data) {
       }
     });
   });
-}
+};
 
 // renders locally
-if (DSCC_IS_LOCAL) {
-  viz.renderViz(local.message);
+if (LOCAL) {
+  drawViz(local.message);
 } else {
-  dscc.subscribeToData(drawViz, {transform: dscc.tableTransform});
+  dscc.subscribeToData(drawViz, {transform: dscc.objectTransform});
 }
